@@ -1,0 +1,2 @@
+include ':app', ':lifecycle-extentions2', ':appjava'
+rootProject.name='Lifecycle Extentions'
