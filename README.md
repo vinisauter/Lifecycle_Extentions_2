@@ -1,4 +1,5 @@
-# Lifecycle_Extentions_2
+# Lifecycle Extentions 2
+[![](https://jitpack.io/v/vinisauter/Lifecycle_Extentions_2.svg)](https://jitpack.io/#vinisauter/Lifecycle_Extentions_2)
 
 # Integrating into your project
 This library is available in [JitPack.io](https://jitpack.io/) repository.
