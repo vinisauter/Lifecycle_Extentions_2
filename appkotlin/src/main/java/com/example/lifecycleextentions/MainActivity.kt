@@ -1,13 +1,16 @@
 package com.example.lifecycleextentions
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.provider.MediaStore
+import androidx.activity.CompatActivity
+import androidx.activity.OnActivityResultCallback
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ReferenceFunction
 import androidx.lifecycle.SingleLiveData
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : CompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,17 @@ class MainActivity : AppCompatActivity() {
         longLiveData.observeOnce(this,
             Observer {
 
+            }
+        )
+    }
+
+    internal fun takePicture() {
+        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(takePictureIntent,
+            object : OnActivityResultCallback() {
+                override fun handleOnActivityResult(resultCode: Int, data: Intent?) {
+
+                }
             }
         )
     }

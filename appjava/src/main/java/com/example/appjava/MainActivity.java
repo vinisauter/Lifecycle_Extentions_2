@@ -1,8 +1,12 @@
 package com.example.appjava;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.activity.CompatActivity;
+import androidx.activity.OnActivityResultCallback;
+import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
@@ -13,7 +17,7 @@ import com.example.lifecycleextentions.LiveDataUtilsKt;
 
 import org.jetbrains.annotations.NotNull;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends CompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,5 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    void takePicture() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(takePictureIntent,
+                new OnActivityResultCallback() {
+                    @Override
+                    public void handleOnActivityResult(int resultCode, @Nullable Intent data) {
+
+                    }
+                }
+        );
     }
 }
